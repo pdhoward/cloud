@@ -14,14 +14,13 @@ const Port = 4000
 server.use(middlewares)
 
 // Add custom routes before JSON Server router
-server.get('/echo', (req, res) => {
+server.get('/echo', async (req, res) => {
     //res.jsonp(req.query)
-    let data = require('./data')
-    data().then((d) => {
-        console.log(data)
-        res.json(data)
-    })
+    let data = await require('./data')()
    
+    console.log(data)
+    res.json(data)
+  
 })
 
 // To handle POST, PUT and PATCH you need to use a body-parser
