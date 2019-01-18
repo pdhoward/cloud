@@ -1,0 +1,14 @@
+{
+  "name": "testserver",
+  "version": "0.7.0",
+  "main": "server.js",  
+  "scripts": {
+    "start": "node ./server"
+  },
+  "dependencies": {   
+    "express": "*"
+  },
+  "author": "Strategic Machines",
+  "license": "MIT",
+  "homepage": "http://www.xiollc.com"
+}
