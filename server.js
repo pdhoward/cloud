@@ -13,14 +13,16 @@ const middlewares = jsonServer.defaults()
 const Port = 4000
 server.use(middlewares)
 
-// Add custom routes before JSON Server router
-server.get('/echo', async (req, res) => {
-    //res.jsonp(req.query)
-    let data = await require('./data')()
-   
+// return custom data
+server.get('/data', async (req, res) => {   
+    let data = await require('./data')()   
     console.log(data)
-    res.json(data)
-  
+    res.json(data)  
+})
+
+// /echo?q=
+server.get('/echo', (req, res) => {
+    res.jsonp(req.query) 
 })
 
 // To handle POST, PUT and PATCH you need to use a body-parser
@@ -29,6 +31,7 @@ server.use(jsonServer.bodyParser)
 server.use((req, res, next) => {
     if (req.method === 'POST') {
         req.body.createdAt = Date.now()
+        res.json(data) 
     }
     // Continue to JSON Server router
     next()
