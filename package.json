@@ -1,12 +1,13 @@
 {
   "name": "testserver",
   "version": "0.7.0",
-  "main": "server.js",  
+  "main": "server.js",
   "scripts": {
     "start": "node ./server"
   },
-  "dependencies": {   
-    "express": "*"
+  "dependencies": {
+    "express": "*",
+    "json-server": "^0.14.2"
   },
   "author": "Strategic Machines",
   "license": "MIT",
