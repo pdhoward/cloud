@@ -1,4 +1,4 @@
-# Xloud
+# Cloud
 Server which tests serverless functions
 
 
