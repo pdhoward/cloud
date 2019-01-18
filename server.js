@@ -7,7 +7,7 @@
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const path = require('path')
-const router = jsonServer.router(path.join(__dirname, './json/db.json'))
+const router = jsonServer.router(path.join(__dirname, 'json/db.json'))
 const middlewares = jsonServer.defaults()
 
 const Port = 4000
@@ -37,7 +37,7 @@ server.use(async (req, res, next) => {
         next(data)
     }
     // Continue to JSON Server router
-   // next()
+   next()
 })
 
 server.use(router)

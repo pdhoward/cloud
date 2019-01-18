@@ -2,6 +2,8 @@
 Server which tests serverless functions
 
 
+https://dzone.com/articles/zero-code-rest-with-json-server
+
 ## Getting Started
 
 1. Clone this repository.
